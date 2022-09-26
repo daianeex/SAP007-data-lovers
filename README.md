@@ -5,19 +5,19 @@
 
 ## Índice
 
-- [1. Sobre o projeto/produto]
-- [3. História de usuário]
-- [4. Objetivos de aprendizagem]
-- [5. Protótipos e design]
-- [6. Ferramentas usadas]
-- [7. Desenvolvedoras]
+- [1. Sobre o projeto/produto](#1-Sobre-o-projeto)
+- [2. História de usuário](#2-História-de-usuário)
+- [3. Objetivos de aprendizagem](#3-Objetivos-de-aprendizagem)
+- [4. Protótipos e design](#4-Protótipos-e-design)
+- [5. Ferramentas usadas](#5-Ferramentas-usadas)
+- [6. Desenvolvedoras](#6-Desenvolvedoras)
 ---
 
 
 # Rick And Morty WIKI
 
 
-## 1. Sobre o projeto/produto
+## 1. Sobre o projeto
 
 O projeto Rick And Morty WIKI tem como objetivo final, oferecer todas as informações que um Super Fã da série americana Rick And Morty gostaria de saber.
 Informações importantes como:
@@ -31,7 +31,7 @@ E oferecer ao usuário/visitante/fã uma experiência alucinante, divertida e co
 
 
 
-## 3. História de usuário
+## 2. História de usuário
 Elaboramos as histórias de usuário, pensando em primeiro lugar, em qual seria o interesse do usuário no nosso site, e como ele iria usar nosso produto e se locomover na página Rick and Morty WIKI e resolver seus interesses.
 
 <img src="usuario.jpg">
@@ -40,64 +40,64 @@ Elaboramos as histórias de usuário, pensando em primeiro lugar, em qual seria 
 
 ## 4. Objetivos de aprendizagem
 ### HTML
-- [ ] **Uso de HTML semântico**
+- [x] **Uso de HTML semântico**
 ### CSS
-- [ ] **Uso de seletores de CSS**
+- [x] **Uso de seletores de CSS**
 
-- [ ] **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
+- [x] **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
 
-- [ ] **Uso de flexbox en CSS**
+- [x] **Uso de flexbox en CSS**
 ### Web APIs
-- [ ] **Uso de seletores de DOM**
+- [x] **Uso de seletores de DOM**
 
-- [ ] **Gerenciamento de eventos de DOM**
+- [x] **Gerenciamento de eventos de DOM**
 
-- [ ] **Manipulação dinâmica de DOM**
+- [x] **Manipulação dinâmica de DOM**
 ### JavaScript
-- [ ] **Diferenciar entre tipos de dados primitivos e não primitivos**
+- [x] **Diferenciar entre tipos de dados primitivos e não primitivos**
 
-- [ ] **Manipular arrays (filter, map, sort, reduce)**
+- [x] **Manipular arrays (filter, map, sort, reduce)**
 
-- [ ] **Manipular objects (key | value)**
+- [x] **Manipular objects (key | value)**
 
-- [ ] **Variáveis (declaração, atribuição, escopo)**
+- [x] **Variáveis (declaração, atribuição, escopo)**
 
-- [ ] **Uso de condicionais (if-else, switch, operador ternário)**
+- [x] **Uso de condicionais (if-else, switch, operador ternário)**
 
-- [ ] **Uso de laços (for, for..of, while)**
+- [x] **Uso de laços (for, for..of, while)**
 
-- [ ] **Uso de funções (parâmetros, argumentos, valor de retorno)**
+- [x] **Uso de funções (parâmetros, argumentos, valor de retorno)**
 
-- [ ] **Testes unitários**
+- [x] **Testes unitários**
 
-- [ ] **Uso ES modules**
+- [x] **Uso ES modules**
 
 - [ ] **Uso de linter (ESLINT)**
 
-- [ ] **Uso de identificadores descritivos (Nomenclatura | Semântica)**
+- [x] **Uso de identificadores descritivos (Nomenclatura | Semântica)**
 
 - [ ] **Diferença entre expression e statements**
 ### Git e GitHub
-- [ ] **Git: Instalação e configuração**
+- [x] **Git: Instalação e configuração**
 
-- [ ] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
+- [x] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
 
-- [ ] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [x] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
 
-- [ ] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
+- [x] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
 
-- [ ] **GitHub: Implantação com GitHub Pages**
+- [x] **GitHub: Implantação com GitHub Pages**
 
-- [ ] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
+- [x] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
 ### user-centricity
-- [ ] **Desenhar a aplicação pensando e entendendo a usuária**
+- [x] **Desenhar a aplicação pensando e entendendo a usuária**
 ### product-design
-- [ ] **Criar protótipos para obter feedback e iterar**
+- [x] **Criar protótipos para obter feedback e iterar**
 
-- [ ] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
+- [x] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
 
 ### research
-- [ ] **Planejar e executar testes de usabilidade**
+- [x] **Planejar e executar testes de usabilidade**
 
 
 
