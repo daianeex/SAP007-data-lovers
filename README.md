@@ -38,7 +38,7 @@ Elaboramos as histórias de usuário, pensando em primeiro lugar, em qual seria 
 
 
 
-## 4. Objetivos de aprendizagem
+## 3. Objetivos de aprendizagem
 ### HTML
 - [x] **Uso de HTML semântico**
 ### CSS
@@ -101,7 +101,7 @@ Elaboramos as histórias de usuário, pensando em primeiro lugar, em qual seria 
 
 
 
-## 5. Protótipos e design
+## 4. Protótipos e design
 
 Nós iniciamos trazendo nossas ideias de layout e design da página para o papel
 <img src="protótipo.jpg">
@@ -113,14 +113,14 @@ após a escolha das cores, iniciamos a montagem do layout pelo figma
 <img src="prot.png">
 
 
-## 6. Ferramentas usadas
+## 5. Ferramentas usadas
 - JavaScript
 - Html5
 - Css3
 - Figma
 - Git
 
-## 7. Desenvolvedoras
+## 6. Desenvolvedoras
 
 - Daiane Gonçalves
 - Isabela Soares
