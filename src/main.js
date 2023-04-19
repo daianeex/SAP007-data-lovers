@@ -1,19 +1,18 @@
-import { ordemNameAA, ordemNameBB } from './data.js';
-import data from './data/rickandmorty/rickandmorty.js';
+import { orderAZ, orderZA, filterStatus, filtroespecie, filterGender, calculo, filteredItem } from "./data.js";
+import data from "./data/rickandmorty/rickandmorty.js";
 
-const showPersonagens = document.getElementById("card")
-const arrayRickAndMorty = data.results
-let cardsAtuais = arrayRickAndMorty
+export const showCharacters = document.getElementById("card")
+const characters = data.results
 
-function showInfos(arrayRickAndMorty) {
-  showPersonagens.innerHTML = arrayRickAndMorty.map(item =>
+function showInfos(characters) {
+  showCharacters.innerHTML = characters.map(item =>
     `<div class="card">
         <div class="front">
           <div class="name-title">
             <p class="title"> ${item.name}</p>
           </div>
           <div class="card-img">
-            <img src="${item.image}" class="imgcard" position="center" width="174px" height="170px" border-radius="5%" />
+            <img class="imgcard" src="${item.image}"  />
           </div>
           <div class="card-infos">
            <p> <b>Status:</b> ${item.status}</p>
@@ -26,84 +25,123 @@ function showInfos(arrayRickAndMorty) {
        <p class="title"> ${item.name}</p>
         </div>
         <div class="card-img">
-        <img src="${item.image}" class="imgcard" position="center" width="174px" height="170px" border-radius="5%" />
+        <img class="imgcard" src="${item.image}" />
       </div>
-        <b>Origem:</b> ${item.origin.url}</a>
-        <b>Localização:</b>${item.location.url}</p>
-        <p><b>Epsódios que aparece:</b> ${item.episode.lenght}</p>
+        <p><b>Origem:</b> ${item.origin.name}</a></p>
+        <b>Localização:</b>${item.location.name}</p>
+        <p><b>Faz parte de:</b> ${item.episode.length} Epsódios</p>
         </div>
        </div>`
 
-  ).join('')
-
+  ).join("")
 }
 
-showInfos(cardsAtuais)
-//filtros status
+showInfos(characters)
+
+const showStats = document.getElementById("statistics")
+const selectGender = document.getElementById("selectFilterGender")
 const selectStatus = document.getElementById("selectFilterLife")
-
-selectStatus.addEventListener("change", (event) => {
-  cardsAtuais = cardsAtuais.filter((item) => {
-    return item.status === event.target.value
-  })
-
-  showInfos(cardsAtuais)
-})
-
-//filtroespecie
 const selectSpecies = document.getElementById("selectFilterSpecies")
 
-selectSpecies.addEventListener("change", (event) => {
-  cardsAtuais = cardsAtuais.filter((item) => {
-    return item.species === event.target.value
-  })
-  showInfos(cardsAtuais)
+selectStatus.addEventListener("change", (event) => {
+  let newArrayStatus = filterStatus(characters, event.target.value)
+  if (selectGender.value) {
+    newArrayStatus = newArrayStatus.filter((item) => {
+      return item.gender === selectGender.value
+    })
+  }
+  if (selectSpecies.value) {
+    newArrayStatus = newArrayStatus.filter((item) => {
+      return item.species === selectSpecies.value
+    })
+  }
+  let result = calculo(newArrayStatus.length, characters.length)
+  showStats.innerHTML = result
+  showInfos(newArrayStatus)
 })
-//filtroGenero
-const selectGender = document.getElementById("selectFilterGender")
+
+selectSpecies.addEventListener("change", (event) => {
+  let newArraySpecies = filtroespecie(characters, event.target.value)
+  if (selectGender.value) {
+    newArraySpecies = newArraySpecies.filter((item) => {
+      return item.gender === selectGender.value
+    })
+  }
+  if (selectStatus.value) {
+    newArraySpecies = newArraySpecies.filter((item) => {
+      return item.status === selectStatus.value
+    })
+  }
+  let result = calculo(newArraySpecies.length, characters.length)
+  showStats.innerHTML = result
+  showInfos(newArraySpecies)
+
+})
 
 selectGender.addEventListener("change", (event) => {
-  cardsAtuais = cardsAtuais.filter((item) => {
-    return item.gender === event.target.value
-  })
-  showInfos(cardsAtuais)
-})
-//função ordenar A a Z
-function ordemNameA(event) {
-  event.preventDefault()
-  return showInfos(ordemNameAA(cardsAtuais));
-}
+  let newArrayGender = filterGender(characters,
+    event.target.value)
+  if (selectStatus.value) {
+    newArrayGender = newArrayGender.filter((item) => {
+      return item.status === selectStatus.value
+    })
+  }
+  if (selectSpecies.value) {
+    newArrayGender = newArrayGender.filter((item) => {
+      return item.species === selectSpecies.value
+    })
+  }
 
-document.getElementById("btn-ordemA").addEventListener("click", ordemNameA);
-//função ordenar Z a A
-function ordemNameB(event) {
-  event.preventDefault()
-  return showInfos(ordemNameBB(cardsAtuais));
+  let result = calculo(newArrayGender.length, characters.length)
+  showStats.innerHTML = result
+  showInfos(newArrayGender)
+
+})
+
+function orderaz(e) {
+  e.preventDefault()
+  return showInfos(orderAZ(characters));
 }
-document.getElementById("btn-ordemZ").addEventListener("click", ordemNameB);
-//função limpar
+if (selectStatus.value) {
+  characters = characters.filter((item) => {
+    return item.status === selectStatus.value
+  })
+}
+if (selectSpecies.value) {
+  characters = characters.filter((item) => {
+    return item.species === selectSpecies.value
+  })
+}
+if (selectGender.value) {
+  characters = characters.filter((item) => {
+    return item.gender === selectGender.value
+  })
+}
+document.getElementById("btn-ordemA").addEventListener("click", orderaz);
+
+function orderza(e) {
+  e.preventDefault()
+  return showInfos(orderZA(characters));
+}
+document.getElementById("btn-ordemZ").addEventListener("click", orderza);
+
+
 const clearFilters = document.getElementById("btn-limpar");
-function clearAll() {
+function clearAll(e) {
+  e.preventDefault()
   window.location.reload();
 }
 clearFilters.addEventListener("click", clearAll);
-//pesquisar por nome
 
-const searchBar = document.getElementById('searchBar');
+const searchBar = document.getElementById("searchBar");
+searchBar.addEventListener("keyup", (e) => {
+  let searchString = filteredItem(e.target.value.toLowerCase())
+  showInfos(searchString);
+})
 
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value;
-  cardsAtuais = cardsAtuais.filter(item => {
-    return item.name.includes(searchString) ||
-      item.status.includes(searchString) ||
-      item.species.includes(searchString) ||
-      item.gender.includes(searchString)
-  });
-  showInfos(cardsAtuais)
-});
+const btnBackTop = document.querySelector("#voltarAoTopo");
+btn.addEventListener("click", function () {
+  window.scrollTo(0, 0);
 
-//const calculoStatus = document.getElementById("calculoAgreStatus");
-//calculoStatus.innerHTML = ${item.status.reduce((acc,curr) => acc+curr} 0)
-// return acc + curr.
-// return calculoStatus/cardsAtuais.length
-//${item.status.reduce((acc,curr) => acc+curr, 0)}</h2><h3> A média de personagens é: ${item.status.reduce((acc,curr) => acc+curr, 0)/cardsAtuais.length}`
+})
+
