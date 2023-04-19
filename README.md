@@ -34,10 +34,6 @@ E oferecer ao usuário/visitante/fã uma experiência alucinante, divertida e co
 ## 2. História de usuário
 Elaboramos as histórias de usuário, pensando em primeiro lugar, em qual seria o interesse do usuário no nosso site, e como ele iria usar nosso produto e se locomover na página Rick and Morty WIKI e resolver seus interesses.
 
-<img src="usuario.jpg">
-
-
-
 ## 3. Objetivos de aprendizagem
 ### HTML
 - [x] **Uso de HTML semântico**
